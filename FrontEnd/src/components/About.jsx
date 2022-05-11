@@ -7,7 +7,7 @@ import ExpertCard from './ExpertCard';
 
 const About = () => {
     const [...trainers] = useContext(TrainerContext);
-    const [gym] = useState(trainers.filter(item => item.type==='gym'));
+    const [gym] = useState(trainers.filter(tr => tr.type==='gym'));
     const [nut] = useState(trainers.filter(item => item.type==='nut'));
     return (
         <main>
