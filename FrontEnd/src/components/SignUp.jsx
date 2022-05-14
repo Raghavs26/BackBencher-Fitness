@@ -54,8 +54,8 @@ const SignUp = () => {
       <div className="gridy">
       <input type="text" className="form-control" placeholder="Name" value={name} onChange={(e)=>{setname(e.target.value)}}/>
       <input type="text" className="form-control" placeholder="Email" value={email} onChange={(e)=>{setemail(e.target.value)}}/>
-      <input type="text" className="form-control" placeholder="Password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
-      <input type="text" className="form-control" placeholder="confirm Password" value={confirmpassword} onChange={(e)=>{setconfirmpassword(e.target.value)}}/>
+      <input type="password" className="form-control" placeholder="Password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
+      <input type="password" className="form-control" placeholder="confirm Password" value={confirmpassword} onChange={(e)=>{setconfirmpassword(e.target.value)}}/>
       <br/>
         <button className="register-btn" onClick={(e) => e.preventDefault()}>
          <button onClick={register} className="register-btn">Click here</button> 
@@ -67,7 +67,7 @@ const SignUp = () => {
     <form className="log-form" autoComplete={"off"}>
       <div className="gridy">
       <input type="text" className="form-control" placeholder="Email" value={email} onChange={(e)=>{setemail(e.target.value)}}/>
-      <input type="text" className="form-control" placeholder="Password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
+      <input type="password" className="form-control" placeholder="Password" value={password} onChange={(e)=>{setpassword(e.target.value)}}/>
      
         <button className="register-btn" onClick={(e) => e.preventDefault()}>
        <button onClick={login} className='register-btn'>   Login</button>

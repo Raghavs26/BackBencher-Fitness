@@ -14,13 +14,13 @@ const Footer=()=>{
                 </div>
                 <div className="footer-sub location">
                     <strong className="footer-subheading">Location</strong>
-                    <strong className="footer-desc">216,Main Road,Panchkula,Sector 15</strong>
+                    <strong className="footer-desc"> Turing Block,Chitkara University</strong>
                     <strong className="footer-desc">Monday To Saturday(5AM to 10PM)</strong>
                 </div>
                 <div className="alt-location">
                     <strong className="footer-subheading">Location</strong>
                     <span className="footer-desc">
-                        216 Main Road,Panchkula,Sector15<br/>
+                       Turing Block,Chitkara University<br/>
                         Monday to Saturday(5AM to 10PM)
                     </span>
                 </div>
