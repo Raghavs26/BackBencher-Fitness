@@ -12,13 +12,13 @@ const Contact=()=>{
                     <article className="contact-section">
                         <stong className="contact-heading">Location</stong>
                         <p className="contact-paragraph">
-                            216,Main Road,Panchkula,Sector 15
+                        Turing Block,Chitkara University(Rajpura)
                         </p>
                     </article>
                     <article className="contact-section">
                         <strong className="contact-heading">Call</strong>
                         <p className="contact-paragraph">
-                            +91 90568-11664    
+                            +91 9876543210
                         </p>    
                     </article>
                     <article className="contact-section">

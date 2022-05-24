@@ -1,10 +1,15 @@
 import React ,{useState} from 'react';
 import {FaBars} from 'react-icons/fa';
 import {NavLink} from 'react-router-dom';
+import {Dropdown} from 'react-bootstrap/Dropdown'
 
 const Navbar= ()=>{
     const[mobile,SetMobile]=useState(true);
-
+const user=JSON.parse(localStorage.getItem('currentUser'))
+function logout(){
+    localStorage.removeItem('currentUser')
+  window.location.href='/'
+  }
     return(
         <nav className="navbar">
         <NavLink to="/" className="navbar-brand">BackBencher Fitness</NavLink>
@@ -24,7 +29,7 @@ const Navbar= ()=>{
                 #FitArmy
             </NavLink>
 
-            <NavLink to="/about" activeClassName="current" className="navbar-link">
+            <NavLink to="/about" activeClassName="current"  className="navbar-link">
                 About Us
             </NavLink>
 
@@ -35,11 +40,21 @@ const Navbar= ()=>{
             <NavLink to ="/contact" activeClassName="current" className="navbar-link">
                 Contact
             </NavLink>
-            <NavLink to ="/Meal1" activeClassName="current" className="navbar-link">
-                Meal
+           
+            {user?(<>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                
+                <a activeClassName="current" className="navbar-link" href="#"onClick={logout}>Logout</a>
+             
+              </div>
+              <NavLink to ="/Meal1" activeClassName="current" className="navbar-link">
+              {user.name}
             </NavLink>
-            
-            <NavLink to="/register" className="navbar-link join-now">Join Now</NavLink>
+                </>)
+                :<>
+                <NavLink to="/register" className="navbar-link join-now">Join Now</NavLink>
+                </>}
+           
         </div>
     </nav>
     )

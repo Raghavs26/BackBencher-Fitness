@@ -4,7 +4,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import './meal.css';
 import vid from './180419_Boxing_A1_04.mp4';
+
 function Meal1() {
+  const user=JSON.parse(localStorage.getItem('currentUser'))
   const [mealData, setMealData] = useState(null);
   const [calories, setCalories] = useState(2000);
 
@@ -33,6 +35,7 @@ function Meal1() {
                     <source src={vid} type="video/mp4"/>
                 </video>
       <section className="controls">
+      <h2 style={{fontSize:'30px'}}>Welcome {user.name} please enter the calories you want to intake in the day</h2>
         <input
           type="number"
           placeholder="Calories (e.g. 2000)"

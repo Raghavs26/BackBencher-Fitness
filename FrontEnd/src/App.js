@@ -5,7 +5,7 @@ import ReviewContextProvider from './context/ReviewContext';
 import TrainerContextProvider from './context/TrainerContext';
 import Lazy from './components/Lazy';
 import ErrorPage from './components/ErrorPage';
-
+import Register from './components/Register'
 
 function App() {
   const Home = lazy(()=> import('./components/Home'));
@@ -49,6 +49,7 @@ function App() {
               <Route path='/error' component={ErrorPage} />
               <Route exact path="/staff/:id" component={IndividualExpert} />
                 <Route path="/fitarmy" component={FitArmy} />
+             
               <Route component={ErrorPage} />
             </Switch>
           </Suspense>

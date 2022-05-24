@@ -1,15 +1,15 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import {useState,useEffect} from 'react'
 // import { axios } from "axios";
 const axios = require("axios");
 
+
 const Pricing = () => {
-  const user = { name: "bcde", email: "bcd@gmail.com", password: "123456" };
-  axios.post("/api/user/register", user).then(function (response) {
-    console.log(response);
-  });
-  return (
+  const [app,setApp]=useState('');
+
+  return ( 
     <div>
       <Navbar />
       <section className="price">

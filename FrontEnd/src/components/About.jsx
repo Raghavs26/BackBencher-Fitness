@@ -1,14 +1,40 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import {TrainerContext} from '../context/TrainerContext'
 import vid from '../assets/180419_Boxing_A1_04.mp4';
 import ExpertCard from './ExpertCard';
+const axios=require('axios')
+
 
 const About = () => {
+    const [tr,settr]=useState('')
+    useEffect(async()=>{
+        try{
+            const tr=await (await axios.get("/api/trainers/getalltrainers")).data;
+            settr(tr);
+        }catch(err){
+            console.log(err);
+        }
+       
+       
+    },[])
+    console.log(tr[0])
     const [...trainers] = useContext(TrainerContext);
+    
+    const gym1=[];
+    for(let i=0;i<8;i++){
+        gym1.push(tr[i]);
+    }
+    console.log(gym1[0])
+    
+    const nut1=[] ;
+    for(let i=8;i<=10;i++){
+        nut1.push(tr[i]);
+    } 
     const [gym] = useState(trainers.filter(item => item.type==='gym'));
     const [nut] = useState(trainers.filter(item => item.type==='nut'));
+    
     return (
         <main>
             <Navbar />
@@ -36,6 +62,7 @@ const About = () => {
                             Let's meet our team of <strong>Nutritionists </strong>
                         </p>
                         <div className="flexy">
+                        
                             {nut.map(item => 
                                 <ExpertCard key={item.id}
                                     name={item.name}
